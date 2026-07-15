@@ -134,6 +134,18 @@ class ExpenseDatabase {
     );
     if (count != null && count > 0) return;
 
+    // Only insert minimal app metadata on first run. Do not pre-populate
+    // expenses or category budgets so the app starts empty for the user.
+    await db.transaction((txn) async {
+      await txn.insert('app_meta', {
+        'id': 1,
+        'monthly_budget': 1500.0,
+        'theme_mode': 'system',
+      });
+    });
+
+    /*
+    // Original seeding logic (commented out so it can be restored if needed)
     final now = DateTime.now();
     final seed = [
       Expense(
@@ -199,6 +211,7 @@ class ExpenseDatabase {
         });
       }
     });
+    */
   }
 
   static Map<String, Object?> _expenseToRow(Expense e) => {
