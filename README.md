@@ -17,7 +17,11 @@ Built with an emphasis on **privacy**, **performance**, and **user experience**,
 
 ## 🎥 Video Demo
 
-*(Upload your video demo here)*
+
+
+https://github.com/user-attachments/assets/d7099f8e-2740-4c79-b83d-61fedc4632bf
+
+
 
 ---
 
